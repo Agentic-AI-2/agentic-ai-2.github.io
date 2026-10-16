@@ -3376,19 +3376,28 @@ underlying the profiles in Table <a href="#tab:representative-system-profiles">
 default. The scope includes ordinary role memory and serialized-team
 recovery, without an added cross-project learning service.</p>
 <ul>
-<li><p><strong>MG1:</strong> , , lines 16–75: flags, role construction,
-QA activation, and recovery entry.</p></li>
-<li><p><strong>MG2:</strong> , lines 56–78 and 99–138: serialization,
-reconstruction, project requirement, and team execution. , lines 88–155
-and 369–444: retained state and recovery-related observation/action
+<li><p><strong>MG1:</strong> <code>metagpt/software_company.py</code>,
+<code>generate_repo</code>, lines 16–75: flags, role construction, QA
+activation, and recovery entry.</p></li>
+<li><p><strong>MG2:</strong> <code>metagpt/team.py</code>, lines 56–78
+and 99–138: serialization, reconstruction, project requirement, and team
+execution. <code>metagpt/roles/role.py</code>, lines 88–155 and 369–444:
+retained state and recovery-related observation/action
 selection.</p></li>
-<li><p><strong>MG3:</strong> , lines 156–207: roles, message routing,
-and execution. , lines 26–38; , lines 88–198 and 298–349: task
+<li><p><strong>MG3:</strong>
+<code>metagpt/environment/base_env.py</code>, lines 156–207: roles,
+message routing, and execution.
+<code>metagpt/roles/project_manager.py</code>, lines 26–38;
+<code>metagpt/roles/engineer.py</code>, lines 88–198 and 298–349: task
 dependencies and artifact production, revision, and use.</p></li>
-<li><p><strong>MG4:</strong> , lines 46–104; , lines 163–192:
+<li><p><strong>MG4:</strong>
+<code>metagpt/utils/file_repository.py</code>, lines 46–104;
+<code>metagpt/utils/git_repository.py</code>, lines 163–192:
 persistence, dependencies, change inspection, and archiving.</p></li>
-<li><p><strong>MG5:</strong> , lines 48–169; , lines 92–146: tests,
-subprocess execution, output retention, and result routing.</p></li>
+<li><p><strong>MG5:</strong> <code>metagpt/roles/qa_engineer.py</code>,
+lines 48–169; <code>metagpt/actions/run_code.py</code>, lines 92–146:
+tests, subprocess execution, output retention, and result
+routing.</p></li>
 </ul>
 <div id="tab:dossier-metagpt">
 <div class="table-scroll" role="region" tabindex="0" aria-label="Table A10"><table>
@@ -3482,19 +3491,27 @@ LangGraph 1.2.11, <code>langgraph-checkpoint</code> 4.2.0, and
 <code>langgraph-checkpoint-sqlite</code> 3.1.1 [<a href="#ref-langgraph1211">64</a>, <a href="#ref-langgraphcheckpoint420">100</a>, <a href="#ref-langgraphsqlite311">101</a>]. These pins define a static
 assessment basis rather than an executed environment lockfile.</p>
 <ul>
-<li><p><strong>LG1:</strong> , lines 593–693: complete application,
-including <code>AgentState</code>, , graph, checkpoints, and caller
-resume.</p></li>
-<li><p><strong>LG2:</strong> at 1.2.11, <code>interrupt</code>, lines
-851–974: suspension and reuse of supplied resume values.</p></li>
-<li><p><strong>LG3:</strong> at checkpoint 4.2.0, lines 38–146:
-metadata, channel versions, parent references, and pending
-writes.</p></li>
-<li><p><strong>LG4:</strong> in the SQLite 3.1.1 wheel:
-<code>setup</code>, lines 129–167; , lines 191–293; <code>put</code> and
-, lines 387–483.</p></li>
+<li><p><strong>LG1:</strong>
+<code>src/oss/langgraph/interrupts.mdx</code>, lines 593–693: complete
+application, including <code>AgentState</code>, <code>send_email</code>,
+graph, checkpoints, and caller resume.</p></li>
+<li><p><strong>LG2:</strong>
+<code>libs/langgraph/langgraph/types.py</code> at 1.2.11,
+<code>interrupt</code>, lines 851–974: suspension and reuse of supplied
+resume values.</p></li>
+<li><p><strong>LG3:</strong>
+<code>libs/checkpoint/langgraph/checkpoint/base/__init__.py</code> at
+checkpoint 4.2.0, lines 38–146: metadata, channel versions, parent
+references, and pending writes.</p></li>
+<li><p><strong>LG4:</strong>
+<code>langgraph/checkpoint/sqlite/__init__.py</code> in the SQLite 3.1.1
+wheel: <code>setup</code>, lines 129–167; <code>get_tuple</code>, lines
+191–293; <code>put</code> and <code>put_writes</code>, lines
+387–483.</p></li>
 </ul>
-<p>The inspected artifact is , with published SHA-256 identifier
+<p>The inspected artifact is
+<code>langgraph_checkpoint_sqlite-3.1.1-py3-none-any.whl</code>, with
+published SHA-256 identifier
 <code>8505c54c94a658080525d7e6780fdd4e0c078ff2566b30d399c02cc9f9af1c63</code>.</p>
 <div id="tab:dossier-langgraph">
 <div class="table-scroll" role="region" tabindex="0" aria-label="Table A11"><table>
@@ -3569,18 +3586,22 @@ skill components are internal functions of that actor; manual modes,
 additional actors, and external governance services are outside the
 configuration.</p>
 <ul>
-<li><p><strong>VG1:</strong> , lines 104–164, 165–285, and 295–368:
-components, action generation, environment calls, feedback, resumption,
-skill admission, and progress.</p></li>
-<li><p><strong>VG2:</strong> , lines 33–100 and 114–127: reload, program
-assembly, same-name replacement, historical files, and
-retrieval.</p></li>
-<li><p><strong>VG3:</strong> , lines 46–70 and 329–367: persisted
-progress and cached knowledge. , lines 27–77 and 91–138:
+<li><p><strong>VG1:</strong> <code>voyager/voyager.py</code>, lines
+104–164, 165–285, and 295–368: components, action generation,
+environment calls, feedback, resumption, skill admission, and
+progress.</p></li>
+<li><p><strong>VG2:</strong> <code>voyager/agents/skill.py</code>, lines
+33–100 and 114–127: reload, program assembly, same-name replacement,
+historical files, and retrieval.</p></li>
+<li><p><strong>VG3:</strong> <code>voyager/agents/curriculum.py</code>,
+lines 46–70 and 329–367: persisted progress and cached knowledge.
+<code>voyager/agents/critic.py</code>, lines 27–77 and 91–138:
 observation-conditioned task assessment and success
 disposition.</p></li>
-<li><p><strong>VG4:</strong> , lines 105–162; , lines 27–75: environment
-requests, observations, resets, and task-linked events.</p></li>
+<li><p><strong>VG4:</strong> <code>voyager/env/bridge.py</code>, lines
+105–162; <code>voyager/utils/record_utils.py</code>, lines 27–75:
+environment requests, observations, resets, and task-linked
+events.</p></li>
 </ul>
 <div id="tab:dossier-voyager">
 <div class="table-scroll" role="region" tabindex="0" aria-label="Table A12"><table>
@@ -3647,29 +3668,33 @@ subsequent evaluation.</td>
 </tbody>
 </table>
 </div></div>
-<p>The P6.3 witness follows three linked operations. , lines 71–99,
-removes an existing name from the retrieval index and replaces its
-active code entry. Historical files can receive suffixes such as
-<code>V2</code>, while <code>SkillManager.programs</code>, lines 52–59,
-assembles the active collection. <code>Voyager.step</code>, lines
-213–218, supplies that collection to environment execution. An existing
-program calling the replaced skill by name can consequently resolve to
-changed code through this path, without acceptance covering its
-dependent use. This static witness establishes the scoped
-version-binding gap; observed regressions and replacement failure rates
-require separate execution evidence.</p>
+<p>The P6.3 witness follows three linked operations.
+<code>SkillManager.add_new_skill</code>, lines 71–99, removes an
+existing name from the retrieval index and replaces its active code
+entry. Historical files can receive suffixes such as <code>V2</code>,
+while <code>SkillManager.programs</code>, lines 52–59, assembles the
+active collection. <code>Voyager.step</code>, lines 213–218, supplies
+that collection to environment execution. An existing program calling
+the replaced skill by name can consequently resolve to changed code
+through this path, without acceptance covering its dependent use. This
+static witness establishes the scoped version-binding gap; observed
+regressions and replacement failure rates require separate execution
+evidence.</p>
 <h3 id="app:dossier-aios">D.4. AIOS Infrastructure Boundary Case</h3>
 <p>The source is AIOS v0.2.2, commit <code>57046b5</code> [<a href="#ref-aios2025v022">66</a>]. Context management is disabled and
 FIFO scheduling selected. The assessment binds no particular agent
 application, workload, or organizational authority assignment.</p>
 <ul>
-<li><p><strong>AI1:</strong> , lines 58–73: context-management and
-service settings.</p></li>
-<li><p><strong>AI2:</strong> , lines 207–318: scheduler, components, and
-agent-factory integration; lines 449–519: submission and execution
-status; lines 567–597: service-query dispatch.</p></li>
-<li><p><strong>AI3:</strong> , , lines 99–151: syscall execution and
-status handling.</p></li>
+<li><p><strong>AI1:</strong> <code>aios/config/config.yaml</code>, lines
+58–73: context-management and service settings.</p></li>
+<li><p><strong>AI2:</strong> <code>runtime/launch.py</code>, lines
+207–318: scheduler, components, and agent-factory integration; lines
+449–519: submission and execution status; lines 567–597: service-query
+dispatch.</p></li>
+<li><p><strong>AI3:</strong>
+<code>aios/scheduler/fifo_scheduler.py</code>,
+<code>FIFOScheduler._execute_syscall</code>, lines 99–151: syscall
+execution and status handling.</p></li>
 </ul>
 <div id="tab:dossier-aios">
 <div class="table-scroll" role="region" tabindex="0" aria-label="Table A13"><table>
@@ -3938,8 +3963,8 @@ Proceedings of the Advances in Neural Information Processing Systems,
 <p>Li, W.; Zhou, B.; Yu, Y.; Xu, Z.; Yang, Y.; Li, D.; Shan, C.
 WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents
 with Hybrid Interfaces. <span><em>arXiv preprint
-arXiv:2606.09426</em></span> <span><strong>2026</strong></span>, <a href="http://arxiv.org/abs/2606.09426"></a>. Accepted to the EMNLP 2026
-Main Conference.</p></li>
+arXiv:2606.09426</em></span> <span><strong>2026</strong></span>, <a href="http://arxiv.org/abs/2606.09426">[arXiv:cs.AI/2606.09426]</a>.
+Accepted to the EMNLP 2026 Main Conference.</p></li>
 <li><div id="ref-hong2024metagpt">
 
 </div>
@@ -4560,8 +4585,8 @@ Advances in Neural Information Processing Systems, 2024, Vol. 37.
 </div>
 <p>Zhang, Y.; Zou, Y.; Zhang, S.; Hu, J.; Zhang, H.; Xu, B.; Kautz, J.;
 Dong, Y. Agora: Git as Shared Memory for Collective AutoResearch, 2026,
-<a href="http://arxiv.org/abs/2609.18094"></a>. arXiv preprint
-arXiv:2609.18094v1, <span><a href="https://doi.org/10.48550/arXiv.2609.18094" class="uri">https://doi.org/10.48550/arXiv.2609.18094</a></span>.</p></li>
+<a href="http://arxiv.org/abs/2609.18094">[arXiv:cs.LG/2609.18094]</a>.
+arXiv preprint arXiv:2609.18094v1, <span><a href="https://doi.org/10.48550/arXiv.2609.18094" class="uri">https://doi.org/10.48550/arXiv.2609.18094</a></span>.</p></li>
 <li><div id="ref-gruber1993translation">
 
 </div>
@@ -4588,7 +4613,7 @@ Control Tasks through World Models. <span><em>Nature</em></span>
 <li><div id="ref-schick2023toolformer">
 
 </div>
-<p>Schick, T.; Dwivedi-Yu, J.; Dessı́, R.; Raileanu, R.; Lomeli, M.;
+<p>Schick, T.; Dwivedi-Yu, J.; Dessí, R.; Raileanu, R.; Lomeli, M.;
 Hambro, E.; Zettlemoyer, L.; Cancedda, N.; Scialom, T. Toolformer:
 language models can teach themselves to use tools. In Proceedings of the
 Proceedings of the 37th International Conference on Neural Information
@@ -4725,7 +4750,7 @@ Review of Control, Robotics, and Autonomous Systems</em></span> <span>
 </div>
 <p>Psaraftis, H.N.; Wen, M.; Kontovas, C.A. Dynamic vehicle routing
 problems: Three decades and counting. <span><em>Networks</em></span>
-<span><strong>2016</strong></span>, <span><em>67</em></span>, 3–31, <a href="http://arxiv.org/abs/https://onlinelibrary.wiley.com/doi/pdf/10.1002/net.21628"></a>.
+<span><strong>2016</strong></span>, <span><em>67</em></span>, 3–31, <a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/net.21628">[https://onlinelibrary.wiley.com/doi/pdf/10.1002/net.21628]</a>.
 <span><a href="https://doi.org/10.1002/net.21628" class="uri">https://doi.org/10.1002/net.21628</a></span>.</p></li>
 <li><div id="ref-zhang2025v2x">
 
